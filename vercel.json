@@ -1,0 +1,6 @@
+{
+    "rewrites": [
+      { "source": "/authenticate/:walletType", "destination": "/authenticate/index.html" }
+    ]
+  }
+  
